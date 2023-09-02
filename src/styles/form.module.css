@@ -1,0 +1,27 @@
+.login {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    font-size: 22px;
+  }
+
+.loginRow {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0.5em;
+}
+
+.loginInput {
+  display: flex;
+  flex: 1;
+  margin-left: 3em;
+}
+
+.login button {
+  font-size: inherit;
+  margin: 0.25em 1em;
+  background-color: lightblue;
+  border: none;
+  outline: none;
+  padding: 0.25em;
+}

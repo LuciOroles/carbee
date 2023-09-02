@@ -1,8 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { LoginFormValues, LoginRequestBody, LoginResponse } from "@/types";
-import serverSideProps from "@/lib/getPageProps";
 import { useRouter } from "next/router";
+import { LoginFormValues, LoginRequestBody, LoginResponse } from "@/types";
+
+import serverSideProps from "@/lib/getPageProps";
+import style from '../../styles/form.module.css';
 
 let appHeaders = new Headers({
   "Content-Type": "application/json",
@@ -57,16 +59,16 @@ const Login  = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      Login page
+    <form onSubmit={handleSubmit(onSubmit)} className={style.login}>
+      <h2>Login</h2>
       <div>
-        <div>
+        <div className={style.loginRow}>
           <label htmlFor="un">Username</label>
-          <input id="un" type="text" {...register("username", {required: true})} />
+          <input id="un" className={style.loginInput}  type="text" {...register("username", {required: true})} />
         </div>
-        <div>
+        <div className={style.loginRow}>
           <label htmlFor="ps">Password</label>
-          <input type="text" id="ps" {...register("password", {required: true }) } />
+          <input className={style.loginInput}   type="password" id="ps" {...register("password", {required: true }) } />
         </div>
         <button type="submit">
           Login
