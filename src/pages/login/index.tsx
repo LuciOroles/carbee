@@ -1,12 +1,14 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { LoginFormValues, LoginRequestBody, LoginResponse } from "@/types";
+import serverSideProps from "@/lib/getPageProps";
+import { useRouter } from "next/router";
+
+let appHeaders = new Headers({
+  "Content-Type": "application/json",
+});
 
 const getCredentials = (loginRequestBody: LoginRequestBody) => {
-  let appHeaders = new Headers({
-    "Content-Type": "application/json",
-  });
-
   return fetch("/auth", {
     method: "POST",
     headers: appHeaders,
@@ -16,9 +18,22 @@ const getCredentials = (loginRequestBody: LoginRequestBody) => {
   });
 };
 
-const Login  = () => {
- 
 
+const postToken = (loginResponse: LoginResponse) => {
+  return  fetch('/api/saveSession', {
+    method: 'POST',
+    headers: appHeaders,
+    body: JSON.stringify({
+      token: loginResponse.token
+    })
+  }).then((data) => {
+    return data.json();
+  });
+}
+
+const Login  = () => {
+  
+  const router = useRouter();
   const {
     handleSubmit,
     register,
@@ -33,6 +48,8 @@ const Login  = () => {
   const onSubmit = async (data: LoginFormValues) => {
     try {
         const credentials: LoginResponse = await getCredentials(data);
+        await postToken(credentials);
+        router.push('/');
       } catch (error) {
         alert(`Not able to login`);
         console.error(error);
@@ -51,13 +68,14 @@ const Login  = () => {
           <label htmlFor="ps">Password</label>
           <input type="text" id="ps" {...register("password", {required: true }) } />
         </div>
-        <button type="submit"  >
+        <button type="submit">
           Login
         </button>
 
         <button type="reset" onClick={handleReset}>
           Reset
         </button>
+
         {touchedFields.username && errors.username && (<div> The `username` is required </div>)}
         {touchedFields.password && errors.password && (<div> The `password` is required </div>)}
       </div>
@@ -66,3 +84,5 @@ const Login  = () => {
 };
 
 export default Login;
+
+export const getServerSideProps = serverSideProps;
