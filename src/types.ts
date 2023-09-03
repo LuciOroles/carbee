@@ -85,4 +85,5 @@ export type Connection<Node> = {
 
 export type AppointmentConnection = Connection<AppointmentDto>
 
-
+export type DateParsableStr = string;
+export type AppointmentList = DateParsableStr[];

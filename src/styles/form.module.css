@@ -25,3 +25,18 @@
   outline: none;
   padding: 0.25em;
 }
+
+.calendarSection {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.appointmentList {
+  font-size: 19px;
+  width: 4em;
+}
+
+.appointmentList>div {
+  margin: 0.2em;
+  border-bottom: 1px solid #444;
+}

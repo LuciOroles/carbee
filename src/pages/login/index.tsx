@@ -6,7 +6,7 @@ import { LoginFormValues, LoginRequestBody, LoginResponse } from "@/types";
 import serverSideProps from "@/lib/getPageProps";
 import style from '../../styles/form.module.css';
 
-let appHeaders = new Headers({
+const appHeaders = new Headers({
   "Content-Type": "application/json",
 });
 
