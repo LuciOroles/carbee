@@ -2,8 +2,9 @@ import serverSideProps from "@/lib/getPageProps";
 import { HomePageProps, AppointmentList } from "../types";
 import { DateSelector } from "@/ui/DateSelector";
 import { useCallback, useState } from "react";
-import Appointments from "@/ui/Appointments";
+import Appointments from "@/ui/AvAppointments";
 import style from '../styles/form.module.css'
+import { HistoricAppointments } from "@/ui/HistoricApp";
 
 function getAppointmentTimeAvailability({
   token,
@@ -26,6 +27,7 @@ export default function Home(props: HomePageProps) {
   const { token } = props.data;
   const [appointments, setAppointments] = useState<AppointmentList>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  
   const onDateChange = useCallback(async (formattedDate: string) => {
     console.log(formattedDate);
     if (formattedDate.length === 10) {
@@ -33,13 +35,12 @@ export default function Home(props: HomePageProps) {
         setLoading(true);
         let app = await getAppointmentTimeAvailability({ token, formattedDate })
         setAppointments(app);
-        debugger;
       } catch (error) {
         setAppointments([]);
         alert(`Not able to get appointments`);
       }
       finally {
-        setLoading(false)
+        setLoading(false);
       }
     }
   },[token]);
@@ -55,9 +56,12 @@ export default function Home(props: HomePageProps) {
         </div>
         <div>
           {appointments.length > 0 && (
-           <Appointments appointments={appointments} />
+           <Appointments appointments={appointments}/>
           )}
         </div>
+      </div>
+      <div>
+        <HistoricAppointments  token={token} />
       </div>
     </div>
   );

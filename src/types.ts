@@ -78,11 +78,14 @@ export type PageInfo = {
     nextCursor: Cursor
 }
 
+export type PageIdentifier = Pick<PageInfo, 'nextCursor' | 'previousCursor'>;
+
 export type Connection<Node> = {
     edges: Edge<Node>[]
     pageInfo: PageInfo
 }
 
+export type AppointmentEdge = Edge<AppointmentDto>;
 export type AppointmentConnection = Connection<AppointmentDto>
 
 export type DateParsableStr = string;

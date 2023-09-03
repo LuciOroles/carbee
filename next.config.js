@@ -1,15 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     async rewrites() {
-        return  [{
+        const baseUrl = 'https://backend.billowing-truth-38ad.workers.dev/api';
+        
+        return [{
             source: '/auth',
-            destination: 'https://backend.billowing-truth-38ad.workers.dev/api/auth'
+            destination: `${baseUrl}/auth`
         },
         {
             source: '/availability/:path*',
-            destination: 'https://backend.billowing-truth-38ad.workers.dev/api/availability/:path*'
-        }
-        ]
+            destination: `${baseUrl}/availability/:path*`
+        },
+        {
+            source: '/appointments',
+            destination: `${baseUrl}/appointments`
+        }]
     }
 }
 

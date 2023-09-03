@@ -13,11 +13,11 @@ interface IAppointmentsProps {
  
 }
 
-const Appointments: React.FC<IAppointmentsProps> = ({ appointments }) => {
+const AvAppointments: React.FC<IAppointmentsProps> = ({ appointments }) => {
   const dayStr = new Date(appointments[0]).toLocaleDateString('en-GB');
   return (
     <section>
-      <h3>Appointments of {dayStr}</h3>
+      <h3>Available appointments on {dayStr}</h3>
       <div className={style.appointmentList}>
         {appointments.map((app: DateParsableStr, i) => {
           return <div key={i}> {getHours(app)} </div>;
@@ -27,4 +27,4 @@ const Appointments: React.FC<IAppointmentsProps> = ({ appointments }) => {
   );
 };
 
-export default Appointments;
+export default AvAppointments;
