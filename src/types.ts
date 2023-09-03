@@ -61,7 +61,7 @@ export type AppointmentDto = {
 /**
  * @summary Base64 string
  */
-export type Cursor = string
+export type Cursor = string;
 
 export type Edge<Node> = {
     node: Node
@@ -90,3 +90,8 @@ export type AppointmentConnection = Connection<AppointmentDto>
 
 export type DateParsableStr = string;
 export type AppointmentList = DateParsableStr[];
+
+export type FetchAppointmentParams = 
+ { size: number; before: Cursor; after?: undefined } 
+| { size: number, before?: undefined, after: Cursor }
+| {size: number};

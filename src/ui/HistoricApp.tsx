@@ -1,38 +1,88 @@
-import {  AppointmentEdge } from '@/types';
-import  React, {  useEffect, useState } from 'react';
-import { AppointmentEdges } from './AppointmentEdges';
-import useHistoricAppointments from './useHistoricAppointments';
-
+import React, { useEffect, useState } from "react";
+import { AppointmentEdges } from "./AppointmentEdges";
+import useHistoricAppointments from "./useHistoricAppointments";
+import style from '../styles/form.module.css'
 interface IHistoricAppointmentsProps {
-    token: string;
+  token: string;
 }
 
-export const HistoricAppointments: React.FC<IHistoricAppointmentsProps> = ({token}) => {
-   
-    const { currentPage, dataGetter, viewPicker } = useHistoricAppointments({token});
+export const HistoricAppointments: React.FC<IHistoricAppointmentsProps> = ({
+  token,
+}) => {
+  const [loading, setLoading] = useState(false);
+  const {
+    currentPageIndex,
+    currentData,
+    currentPage,
+    dataGetter,
+    navigation,
+    setCurrentPage,
+  } = useHistoricAppointments({
+    token,
+  });
 
-    const [edges, setEdges] = useState <Array<AppointmentEdge>>([]);
+  useEffect(() => {
+    setLoading(true);
+    dataGetter({ size: 20 })
+      .catch((err) => {
+        alert(`not able to read historical`);
+        console.error(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [dataGetter]);
 
-    useEffect(() => {
-          dataGetter();
-          debugger;
-    }, [dataGetter]);
-   
-    return (
-      <section>
-        <h3>History of appointments:</h3>
-        {edges.length > 0 && <AppointmentEdges edges={edges} />}
-        <div>
-            {currentPage && (
-                <button type='button' onClick={() => {
-                    const data = viewPicker({ nextCursor: currentPage.nextCursor, previousCursor: currentPage.previousCursor })
-                    setEdges(data?.edges || [])
-                }}>
-                    Current
-                </button>
-            )}
-        </div>
-      
-      </section>
-    );
+  const onNextClick = () => {
+    setLoading(true);
+    const lastNavItem = navigation[navigation.length - 1];
+    if (lastNavItem.hasNextPage && currentPageIndex === navigation.length - 1) {
+      dataGetter({
+        size: 20,
+        after: lastNavItem.nextCursor,
+      })
+        .catch((err) => {
+          alert(`not able to read historical`);
+          console.error(err);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    } else {
+      setCurrentPage(navigation[currentPageIndex + 1]);
+    }
+  };
+
+  const onPreviousNav = () => {
+    if (currentPageIndex > 0) {
+      setCurrentPage(navigation[currentPageIndex - 1]);
+    }
+  };
+
+  return (
+    <section>
+      <h3>History of appointments:</h3>
+      {loading && <div>loading....</div>}
+      {currentData && <AppointmentEdges edges={currentData} />}
+      <div>
+        {currentPageIndex > 0 && <button onClick={onPreviousNav}>Prev</button>}
+        {navigation &&
+          navigation.map((nav, i, arr) => {
+            const isCurrentPage =
+              nav.nextCursor === currentPage?.nextCursor &&
+              nav.previousCursor === currentPage.previousCursor;
+
+            return (
+              <span key={i} className={style.navNumber + (isCurrentPage ? ` ${style.navNumberActive}` : '')}>
+                {i + 1}
+              </span>
+            );
+          })}
+        {currentPageIndex <= navigation.length - 1 &&
+          currentPage?.hasNextPage && (
+            <button onClick={onNextClick}>Next</button>
+          )}
+      </div>
+    </section>
+  );
 };
