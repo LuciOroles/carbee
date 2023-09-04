@@ -53,17 +53,54 @@
   font-weight: bold;
 }
 
+.historyPanel {
+  display: flex;
+    justify-content: space-between;
+    margin: 0 2em;
+}
+
 .historicalAppTable {
   border: 1px solid blue;
-  display: grid;
-  grid-template-columns: 6em 9em 15em;
+
   max-width: 32em;
   min-width: 30em;
   justify-content: center;
 }
 
-.historicalAppTable > div {
-  border-bottom: 1px solid blue;
+
+.historicalAppRow {
+  display: grid;
+  grid-template-columns: 6em 9em 15em;
   padding: 0.15em 0;
   cursor: pointer;
+  border-bottom: 1px solid blue;
+}
+
+.historicalAppRow.selected {
+ background-color: lightblue;
+}
+
+
+.dtoPanel {
+  border: 1px solid #5c5c5c;
+  border-radius: 10px;
+  width: 18em;
+  padding: 0.2em 1em;
+}
+
+.dtoPanelHeader {
+  font-size: 22px;
+  border-bottom: 1px solid #5c5c5c;
+}
+
+.dtoStatus {
+  display: flex;
+  font-weight: 700;
+  padding-top: 1em;
+}
+
+.dtoTime {
+  display: flex;
+  font-weight: 300;
+  letter-spacing: 2px;
 }

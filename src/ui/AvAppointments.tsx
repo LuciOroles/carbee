@@ -1,12 +1,9 @@
 import { AppointmentList, DateParsableStr } from "@/types";
 import  React from "react";
+import { getHours } from "./utils";
 import style from '../styles/form.module.css';
 
-function getHours(dateStr: DateParsableStr) {
-  const _d = new Date(dateStr);
-  const _min = _d.getUTCMinutes();
-  return _d.getUTCHours() + ":" + (_min < 10 ? `0${_min}` : _min);
-}
+
 
 interface IAppointmentsProps {
   appointments: AppointmentList;

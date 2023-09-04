@@ -1,39 +1,42 @@
-import React from "react";
-import { AppointmentEdge, DateParsableStr } from "@/types";
-import style from '../styles/form.module.css';
+import React, { SetStateAction } from "react";
+import { AppointmentDto, AppointmentEdge, DateParsableStr } from "@/types";
+import style from "../styles/form.module.css";
+import { convertToDateTime } from "./utils";
 interface IAppointmentEdgesProps {
   edges: Array<AppointmentEdge>;
+  selectedDto: AppointmentDto | null;
+  setSelectedDto: React.Dispatch<SetStateAction<AppointmentDto | null>>;
 }
-
-
-function convertToDateTime(str: DateParsableStr) {
-  const d = new Date(str)
-  const date = d.toLocaleDateString('en-GB');
-  const time = `${d.getHours()} : ${d.getMinutes()}`;
-
-  return `${date}`
-}
-
 
 export const AppointmentEdges: React.FC<IAppointmentEdgesProps> = ({
   edges,
+  setSelectedDto,
+  selectedDto,
 }) => {
-
-
   return (
     <div className={style.historicalAppTable}>
+      <div className={style.historicalAppRow}>
         <div>Date </div>
         <div>Status </div>
         <div>Service</div>
+      </div>
 
       {edges.map((edge) => {
-        return <React.Fragment key={edge.node.id}>
-          <div> {convertToDateTime(edge.node.scheduledTime) } </div>  
-          <div> {edge.node.status} </div>
-          <div>{edge.node.workOrder.service} </div>  
-          </React.Fragment>;
+        return (
+          <div
+            key={edge.node.id}
+            onClick={() => setSelectedDto(edge.node)}
+            className={
+              style.historicalAppRow +
+              (selectedDto?.id === edge.node.id ? ` ${style.selected}` : "")
+            }
+          >
+            <div> {convertToDateTime(edge.node.scheduledTime).date} </div>
+            <div> {edge.node.status} </div>
+            <div>{edge.node.workOrder.service} </div>
+          </div>
+        );
       })}
-     
     </div>
   );
 };
