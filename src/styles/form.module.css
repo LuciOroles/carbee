@@ -52,3 +52,18 @@
   color: blue;
   font-weight: bold;
 }
+
+.historicalAppTable {
+  border: 1px solid blue;
+  display: grid;
+  grid-template-columns: 6em 9em 15em;
+  max-width: 32em;
+  min-width: 30em;
+  justify-content: center;
+}
+
+.historicalAppTable > div {
+  border-bottom: 1px solid blue;
+  padding: 0.15em 0;
+  cursor: pointer;
+}

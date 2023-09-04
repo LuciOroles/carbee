@@ -14,7 +14,7 @@ export const HistoricAppointments: React.FC<IHistoricAppointmentsProps> = ({
     currentPageIndex,
     currentData,
     currentPage,
-    dataGetter,
+    fetchAppointments,
     navigation,
     setCurrentPage,
   } = useHistoricAppointments({
@@ -23,7 +23,8 @@ export const HistoricAppointments: React.FC<IHistoricAppointmentsProps> = ({
 
   useEffect(() => {
     setLoading(true);
-    dataGetter({ size: 20 })
+    
+    fetchAppointments({ size: 20 })
       .catch((err) => {
         alert(`not able to read historical`);
         console.error(err);
@@ -31,13 +32,16 @@ export const HistoricAppointments: React.FC<IHistoricAppointmentsProps> = ({
       .finally(() => {
         setLoading(false);
       });
-  }, [dataGetter]);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const onNextClick = () => {
     setLoading(true);
     const lastNavItem = navigation[navigation.length - 1];
     if (lastNavItem.hasNextPage && currentPageIndex === navigation.length - 1) {
-      dataGetter({
+      debugger;
+      fetchAppointments({
         size: 20,
         after: lastNavItem.nextCursor,
       })
@@ -67,7 +71,7 @@ export const HistoricAppointments: React.FC<IHistoricAppointmentsProps> = ({
       <div>
         {currentPageIndex > 0 && <button onClick={onPreviousNav}>Prev</button>}
         {navigation &&
-          navigation.map((nav, i, arr) => {
+          navigation.map((nav, i) => {
             const isCurrentPage =
               nav.nextCursor === currentPage?.nextCursor &&
               nav.previousCursor === currentPage.previousCursor;

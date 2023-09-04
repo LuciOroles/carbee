@@ -29,7 +29,6 @@ export default function Home(props: HomePageProps) {
   const [loading, setLoading] = useState<boolean>(false);
   
   const onDateChange = useCallback(async (formattedDate: string) => {
-    console.log(formattedDate);
     if (formattedDate.length === 10) {
       try {
         setLoading(true);
