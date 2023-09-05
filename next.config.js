@@ -15,6 +15,13 @@ const nextConfig = {
             source: '/appointments',
             destination: `${baseUrl}/appointments`
         }]
+    },
+    redirects() {
+        return [{
+            source: '/',
+            destination: '/dashboard',
+            permanent: true,
+        }]
     }
 }
 

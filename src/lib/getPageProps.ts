@@ -6,10 +6,9 @@ import { LoginPageManager, MainPageManager } from './pageManager'
 
 export default async function getServerSideProps({ req, res }: GetServerSidePropsContext) {
     const getSession = sessionGetter();
-    console.log(req.cookies, ' cookies');
     const session = await getSession(req, res);
 
-    console.log(session, ' session');
+    // using this class instead of a middleware
     let pageManager: PropsPageManager<any, any>;
     if (req.url === '/login') {
         pageManager = new LoginPageManager();

@@ -29,7 +29,7 @@ export class LoginPageManager implements PropsPageManager<{}, PageRedirect> {
         if (token) {
             return {
                 redirect: {
-                    destination: '/',
+                    destination: '/dashboard',
                     statusCode: 307
                 }
             }
