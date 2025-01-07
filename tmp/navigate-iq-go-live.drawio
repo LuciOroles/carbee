@@ -78,7 +78,7 @@
           <mxGeometry x="190" y="660" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2_fUhFv4VgIgSvE_En3R-140" value="Mail Service:&lt;div&gt;SparkPost&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="200" y="40" width="150" height="100" as="geometry" />
+          <mxGeometry x="190" y="35" width="150" height="100" as="geometry" />
         </mxCell>
         <mxCell id="2_fUhFv4VgIgSvE_En3R-144" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2_fUhFv4VgIgSvE_En3R-141" target="2_fUhFv4VgIgSvE_En3R-143">
           <mxGeometry relative="1" as="geometry" />
@@ -104,6 +104,9 @@
           <mxGeometry x="400" y="800" width="210" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2_fUhFv4VgIgSvE_En3R-157" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeWidth=4;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1" source="2_fUhFv4VgIgSvE_En3R-148" target="2_fUhFv4VgIgSvE_En3R-150">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2_fUhFv4VgIgSvE_En3R-177" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2_fUhFv4VgIgSvE_En3R-148" target="2_fUhFv4VgIgSvE_En3R-176">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="2_fUhFv4VgIgSvE_En3R-148" value="Monitoring&lt;div&gt;APP&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;dashed=1;strokeColor=#2D7600;fillColor=#60a917;fontColor=#ffffff;" vertex="1" parent="1">
@@ -146,7 +149,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="2_fUhFv4VgIgSvE_En3R-165" value="load test/&lt;div&gt;health chec&lt;/div&gt;" style="label;whiteSpace=wrap;html=1;image=img/clipart/Gear_128x128.png;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="-270" y="420" width="140" height="60" as="geometry" />
+          <mxGeometry x="-300" y="420" width="140" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2_fUhFv4VgIgSvE_En3R-168" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="2_fUhFv4VgIgSvE_En3R-167" target="2_fUhFv4VgIgSvE_En3R-141">
           <mxGeometry relative="1" as="geometry" />
@@ -162,6 +165,9 @@
         </mxCell>
         <mxCell id="2_fUhFv4VgIgSvE_En3R-174" value="granular&amp;nbsp;&lt;div&gt;user&amp;nbsp;&lt;br&gt;&lt;div&gt;access&lt;/div&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
           <mxGeometry x="850" y="307.5" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2_fUhFv4VgIgSvE_En3R-176" value="ElasticSearch" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="-330" y="535" width="122" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
