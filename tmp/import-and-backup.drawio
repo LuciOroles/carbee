@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15" version="26.0.5">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1469" dy="826" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="583" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1589" dy="826" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="583" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -105,7 +105,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ZRK5j3wljSKJTThkrk0z-31" value="Log changes&amp;nbsp;&lt;div&gt;to Admin&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;labelBackgroundColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="150" y="1180" width="120" height="60" as="geometry" />
+          <mxGeometry x="150" y="1230" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ZRK5j3wljSKJTThkrk0z-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;fontColor=default;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ZRK5j3wljSKJTThkrk0z-33" target="ZRK5j3wljSKJTThkrk0z-31" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -114,7 +114,7 @@
           <mxGeometry x="150" y="1050" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ZRK5j3wljSKJTThkrk0z-38" value="&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Notifications:&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;1. admin&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;2. users/data was refreshed&lt;/div&gt;&lt;/blockquote&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="630" y="970" width="180" height="160" as="geometry" />
+          <mxGeometry x="630" y="980" width="180" height="160" as="geometry" />
         </mxCell>
         <mxCell id="ZRK5j3wljSKJTThkrk0z-42" value="SNOWFLAKE" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;labelBackgroundColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry y="420" width="130" height="90" as="geometry" />
@@ -126,7 +126,7 @@
           <mxGeometry x="60" y="70" width="42.62" height="50" as="geometry" />
         </mxCell>
         <mxCell id="ZRK5j3wljSKJTThkrk0z-46" value="store data into temporary table" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="310" y="460" width="120" height="60" as="geometry" />
+          <mxGeometry x="420" y="450" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ZRK5j3wljSKJTThkrk0z-54" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;fontColor=default;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ZRK5j3wljSKJTThkrk0z-50" target="ZRK5j3wljSKJTThkrk0z-53" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -150,6 +150,41 @@
         </mxCell>
         <mxCell id="ZRK5j3wljSKJTThkrk0z-53" value="valid" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="170" y="910" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="C-GdJFwpa_Lm7cTs0JsF-0" value="NOT DONE" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_callout;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="280" y="40" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C-GdJFwpa_Lm7cTs0JsF-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="C-GdJFwpa_Lm7cTs0JsF-1" target="C-GdJFwpa_Lm7cTs0JsF-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C-GdJFwpa_Lm7cTs0JsF-1" value="partially&amp;nbsp;&lt;div&gt;done&lt;/div&gt;" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_callout;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="270" y="130" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="C-GdJFwpa_Lm7cTs0JsF-2" value="master&amp;nbsp;&lt;div&gt;list/controller&lt;/div&gt;&lt;div&gt;to do&lt;/div&gt;" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_callout;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="450" y="55" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="C-GdJFwpa_Lm7cTs0JsF-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="C-GdJFwpa_Lm7cTs0JsF-4" target="C-GdJFwpa_Lm7cTs0JsF-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="245" y="410" />
+              <mxPoint x="500" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C-GdJFwpa_Lm7cTs0JsF-4" value="partially&amp;nbsp;&lt;div&gt;done&lt;/div&gt;" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_callout;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="260" y="500" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="C-GdJFwpa_Lm7cTs0JsF-6" value="DONE" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_callout;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="270" y="720" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="C-GdJFwpa_Lm7cTs0JsF-7" value="partially&lt;div&gt;done&lt;/div&gt;" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_callout;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="655" y="640" width="90" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="C-GdJFwpa_Lm7cTs0JsF-8" value="partially&amp;nbsp;&lt;div&gt;done&lt;/div&gt;&lt;div&gt;in another repo&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_callout;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="250" y="950" width="180" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="C-GdJFwpa_Lm7cTs0JsF-9" value="NOT DONE" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_callout;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="260" y="1190" width="90" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
